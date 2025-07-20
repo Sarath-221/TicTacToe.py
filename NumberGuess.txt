@@ -1,0 +1,38 @@
+package javaTesting;
+import java.util.Scanner;
+import java.util.Random;
+
+public class NumberGuess {
+	public static void main(String args[])
+	{
+		Random r=new Random();
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter Starting Number");
+		int LowerBound=sc.nextInt();
+	
+		System.out.println("Enter Ending Number");
+		int UpperBound=sc.nextInt();
+	
+		int RandomNumber = r.nextInt(LowerBound,UpperBound);
+		System.out.println(RandomNumber);
+	
+		int Guess;
+		int attempts=0;
+		while(true)
+		{
+			System.out.println("Enter Number Between "+LowerBound+" And "+UpperBound);
+			Guess=sc.nextInt();
+	
+			attempts++;
+			if(Guess<RandomNumber)
+				System.out.println("Random Value is Bigger Than The Guessed One...");
+		
+			else if(Guess>RandomNumber)
+				System.out.println("Random Value is Smaller Than The Guessed One...");
+		
+			else
+				System.out.println("Congratulations!!! You Guessed Number in "+attempts + " Attempts");
+		}
+	}
+}
